@@ -37,7 +37,7 @@ Running the command:
 
 ```bash
 $ l2q terms.xlsx
-blue OR black OR silver OR white
+"blue" OR "black" OR "silver" OR "white"
 ```
 
 `l2q` also works with Word files (.docx) and text files.
