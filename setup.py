@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='l2q',
     keywords='query builder',
-    version='0.1',
+    version='1.0',
     author='Sam Holland',
     author_email='sam.h@xewli.com',
     url='http://github.com/samuar/l2q',
