@@ -3,13 +3,12 @@ from setuptools import setup
 setup(
     name='l2q',
     keywords='query builder',
-    version='1.2',
+    version='1.3',
     author='Sam Holland',
     author_email='sam.h@xewli.com',
     descriptiom='Concatenates a list of terms into a single boolean OR query',
     url='https://github.com/Samuar/l2q',
     license='GPLv3+',
-    platforms=['any'],
     packages=['l2q'],
     download_url='https://github.com/Samuar/l2q/archive/v1.2.tar.gz',
     install_requires=[
