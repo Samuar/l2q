@@ -3,13 +3,14 @@ from setuptools import setup
 setup(
     name='l2q',
     keywords='query builder',
-    version='1.0',
+    version='1.1',
     author='Sam Holland',
     author_email='sam.h@xewli.com',
-    url='http://github.com/samuar/l2q',
+    url='https://github.com/Samuar/l2q',
     license='GPLv3+',
     platforms=['linux', 'mac'],
     packages=['l2q'],
+    download_url='https://github.com/Samuar/l2q/archive/v1.1.tar.gz',
     install_requires=[
         'numpy'
     ],
