@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='l2q',
     keywords='query builder',
-    version='1.3',
+    version='1.2',
     author='Sam Holland',
     author_email='sam.h@xewli.com',
     descriptiom='Concatenates a list of terms into a single boolean OR query',
