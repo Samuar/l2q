@@ -1,3 +1,4 @@
+import math
 import pandas as pd
 from docx import Document
 
@@ -36,10 +37,41 @@ class QueryBuilder:
     @staticmethod
     def build_query_from_excel(file, sheet):
         original = pd.read_excel(file, sheet, header=None)
-        query = ''
+
+        columns = original.columns.__len__()
+        if columns == 0:
+            return ''
+
+        if columns == 1:
+            return QueryBuilder.__build_simple_query_from_excel(original)
+
         rows = original[0].__len__()
+
+        query = ''
+        for column in range(0, columns):
+            query += '('
+            for row in range(0, rows):
+                query += '"' + str(original[column][row]) + '"'
+                if row != rows - 1:
+                    if str(original[column][row+1]) == 'nan':
+                        query += ')'
+                        break
+                    else:
+                        query += ' OR '
+                else:
+                    query += ')'
+
+            if column != columns - 1:
+                query += ' AND '
+        return query
+
+    @staticmethod
+    def __build_simple_query_from_excel(dataframe):
+        query = ''
+        rows = dataframe[0].__len__()
         for row in range(0, rows):
-            query += '"' + original[0][row] + '"'
+            query += '"' + str(dataframe[0][row]) + '"'
             if row != rows - 1:
                 query += ' OR '
         return query
+

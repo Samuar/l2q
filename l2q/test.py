@@ -10,6 +10,12 @@ class QueryBuilderTest(unittest.TestCase):
         actual_query = QueryBuilder.build_query_from_excel('test/simple.xlsx', 'Sheet1')
         self.assertEqual(expected_query, actual_query)
 
+    def test_complex_excel(self):
+        expected_query = '("red" OR "blue" OR "green") AND ("Audi") AND ("A3" OR "A4") AND ("S-Line" OR "Black ' \
+                         'Edition")'
+        actual_query = QueryBuilder.build_query_from_excel('test/complex.xlsx', 'Sheet1')
+        self.assertEqual(expected_query, actual_query)
+
     def test_simple_word_doc(self):
         expected_query = '"Blue" OR "Black" OR "Silver" OR "White"'
         actual_query = QueryBuilder.build_query_from_word_doc('test/simple.docx')
